@@ -3,4 +3,4 @@ This is the repository which will contain the group colleborative efforts to the
 
 
 ## Stage 1
-Presentation - [Navigate to Presentation](./Assets/Gifs/Presentation_Next_word_predictor.pptx)
+Presentation - [Navigate to Presentation](./Assets/Gifs/Next_word_predictor.pptx)
