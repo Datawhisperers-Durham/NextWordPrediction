@@ -34,18 +34,19 @@ Mermaid online editor
 Image drawn via mermaid
 ```mermaid
 graph TD
-    B{Data Gathering} --> C{Text Processing}
+    B(Data Gathering) --> C(Text Processing)
     N[News Websites] --> B
     M[Articles] --> B
-    O[Generate sequence from a sentence using N-gram method] --> C
-    P[Data Cleaning and Optimization and Tokenization] --> C
-    C --> E{Word Embedding}
+    Z[Kaggle] --> B
+    C --> P[Data Cleaning and Optimization and Tokenization]
+    P --> O[Generate sequence from a sentence using N-gram method]
+    O --> E(Word Embedding)
     E --> F[Model Training]
-    F --> H[LSTM] --> I{Desired Output} --> |yes| G{Deployment}
-    I --> |no|J{Fine-tune hyperparameters}
+    F --> H[LSTM] --> I{Desired Output} --> |yes|G(Deployment)
+    I --> |no|J(Fine-tune hyperparameters)
     J --> E
     G --> K
-    K[GUI] --> L[Predict Next Word]
+    K[GUI] --> L(Predict Next Word)
 ```
 
 ## Git branching stretegy
