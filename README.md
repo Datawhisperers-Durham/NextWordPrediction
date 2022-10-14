@@ -1,9 +1,27 @@
 # Next word predictor by Data whisperers.
 This is the repository which will contain the group colleborative efforts to the AIDI capstone project, where we will be building Next Word Predictor.
 
+## Steps and timeline of the project
+
+Important Dates:
+
+| Tasks | Approx Start Date | ETA |
+| :---   | :--- | :--- |
+|Data Gathering|2022-10-14 | 2022-10-19|
+|Clean Data, EDA|2022-10-19 | 2022-10-24|
+|Model fitting and prediction|2022-10-24 | 2022-11-03|
+|Create Model and Test the predictions and UI|2022-11-03 | 2022-11-24|
+|Deploy Website|2022-11-24 | 2022-12-08|
+|Project Pitch|2022-12-08 | 2022-12-15|
+
+![Architecture Diagram](./Assets/timeline.svg)
+
+Image created via mermaid diagram : [Code to create it is here](#timeline-code)
 
 ## Stage 1
 Presentation - [Navigate to Presentation](./Assets/Gifs/Next_word_predictor.pptx)
+
+
 
 ## Stage 2
 Tasks:
@@ -29,25 +47,9 @@ Present the Project
 To generate diagram go to:
 Mermaid online editor
 
-![Architecture Diagram](./Assets/ArchitectureFlow.png)
+![Architecture Diagram](./Assets/ArchitectureFlow.svg)
+Image created via mermaid diagram : [Code to create it is here](#architecture-code)
 
-Image drawn via mermaid
-```mermaid
-graph TD
-    B(Data Gathering) --> C(Text Processing)
-    N[News Websites] --> B
-    M[Articles] --> B
-    Z[Kaggle] --> B
-    C --> P[Data Cleaning and Optimization and Tokenization]
-    P --> O[Generate sequence from a sentence using N-gram method]
-    O --> E(Word Embedding)
-    E --> F[Model Training]
-    F --> H[LSTM] --> I{Desired Output} --> |yes|G(Deployment)
-    I --> |no|J(Fine-tune hyperparameters)
-    J --> E
-    G --> K
-    K[GUI] --> L(Predict Next Word)
-```
 
 ## Git branching stretegy
 Follow - [link](https://codingsight.com/git-branching-naming-convention-best-practices/)
@@ -70,3 +72,46 @@ Also It would be best if we can have test cases and we run on localmachine befor
 
 ### Git merge
 PRs should be merged only with Squash commit to reduce the commit history into main. While mergebacks should be merged with normal merge to store history of where changes came from.
+
+
+## References
+[1] [mermaid live editor](https://mermaid.live/)
+
+## Extras
+
+#### Timeline-code 
+
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section MVP
+        Data Gathering    :2022-10-14, 5d
+        Clean Data, EDA   : 5d
+    section MVP
+        Model fitting and prediction : 2022-10-24, 10d
+    section MMP
+        Create Model and Test the predictions and UI : 2022-11-03, 21d
+    section Launch
+        Deploy Website : 2022-11-24, 14d
+    section Present
+        Project Pitch : 2022-12-08, 7d
+```
+
+#### Architecture-code
+```mermaid
+graph TD
+    B(Data Gathering) --> C(Text Processing)
+    N[News Websites] --> B
+    M[Articles] --> B
+    Z[Kaggle] --> B
+    C --> P[Data Cleaning and Optimization and Tokenization]
+    P --> O[Generate sequence from a sentence using N-gram method]
+    O --> E(Word Embedding)
+    E --> F[Model Training]
+    F --> H[LSTM] --> I{Desired Output} --> |yes|G(Deployment)
+    I --> |no|J(Fine-tune hyperparameters)
+    J --> E
+    G --> K
+    K[GUI] --> L(Predict Next Word)
+```
