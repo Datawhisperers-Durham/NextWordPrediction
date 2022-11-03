@@ -25,7 +25,7 @@ Presentation - [Navigate to Presentation](./Assets/Gifs/Next_word_predictor.pptx
 
 ## Stage 2
 Tasks:
-- Data Gathering (via Kaggle or Web Scrapping)
+- Data Gathering (via Kaggle or Web Scrapping) -[link to dataset](/Code/model_training/data/dataset.txt)
 - Data cleaning (via python)
 - Data Tokenization (python)
 - Train Model (jupiter notebook) - [Link to trained jupyter notebook file](/Code/model_training/nextwordpredictor.ipynb)
