@@ -1,0 +1,45 @@
+{
+    "compilerOptions": {
+        "checkJs": false,
+        "jsx": "react-jsx",
+        "target": "es5",
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "alwaysStrict": true,
+        "noEmit": true,
+        "noEmitOnError": true,
+        "esModuleInterop": true,
+        "outDir": "./dist",
+        "rootDir": "src",
+        "declaration": true,
+        "downlevelIteration": true,
+        "removeComments": true,
+        "noImplicitAny": false,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "preserveConstEnums": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "esnext",
+        "isolatedModules": true,
+        "lib": [
+            "dom",
+            "es6"
+        ],
+        "baseUrl": ".",
+        "strict": true
+    },
+    "include": [
+        "./src/**/*.tsx",
+        "compress.tsx",
+        "src/components/chat_message_component.jsx",
+        "src/components/chat_bubble_component.jsx"
+    ],
+    "exclude": [
+        "node_modules",
+        "build",
+        "src1",
+        "environment",
+        "prisma"
+    ]
+}

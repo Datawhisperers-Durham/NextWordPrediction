@@ -28,7 +28,7 @@ Tasks:
 - Data Gathering (via Kaggle or Web Scrapping)
 - Data cleaning (via python)
 - Data Tokenization (python)
-- Train Model (jupiter notebook)
+- Train Model (jupiter notebook) - [Link to trained jupyter notebook file](/Code/model_training/nextwordpredictor.ipynb)
 - Test Model (jupiter)
 - Create Website/Mobile App UI kind of Chat Page to get the predictions and when user clicks send that prediction usage to the backend, for futher training (React)
     Few designs that can be proposed:
