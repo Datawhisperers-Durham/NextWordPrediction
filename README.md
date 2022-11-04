@@ -39,6 +39,10 @@ Tasks:
 - Create a backend to dump data via web scrapping, and for analytics. (Graphql/Flask/golang and DB can be mongo/postgres)
     - Need to upload the selections of the predictions as well as the word by which the result got predicted in backend to personalise the content.
 
+Ui has been designed on Nov 3, below is the outcome of the UI where we will type and hit send button to send the text and while typing we will get the predictions as shown in the image.
+    ![Architecture Diagram](./Assets/UIDesigned.png)
+
+
 ## Stage 3
 Present the Project
 

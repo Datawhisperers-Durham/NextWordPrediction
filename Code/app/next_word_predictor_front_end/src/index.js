@@ -11,13 +11,21 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 export const store = configureStore();
 
-ReactDOM.render(
+// ReactDOM.render(
+//   <StyledEngineProvider injectFirst>
+//     <React.StrictMode>
+//       <Root store={store} history={history} />
+//     </React.StrictMode>
+//   </StyledEngineProvider>
+//   , document.getElementById('root')
+// );
+
+root.render(
   <StyledEngineProvider injectFirst>
     <React.StrictMode>
       <Root store={store} history={history} />
     </React.StrictMode>
   </StyledEngineProvider>
-  , document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

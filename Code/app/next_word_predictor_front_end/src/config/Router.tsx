@@ -5,6 +5,7 @@ import { bindActionCreators } from "redux";
 import * as actions from "../redux/action/next_prediction_action";
 import PropTypes from 'prop-types';
 import App from "../App";
+import ToggleColorMode from './ToggleColorMode';
 
 
 const RequireAuth = ({ isAuthenticated, children }) => {
@@ -27,7 +28,7 @@ class Router extends Component<RouterProp> {
                     <Route
                         path="*"
                         element={
-                            <App history={this.props.history}
+                            <ToggleColorMode history={this.props.history}
                                 page="createPost"
                                 path={this.props.history.location.pathname.toLowerCase()}
                                 store={this.props.store} />
@@ -40,8 +41,8 @@ class Router extends Component<RouterProp> {
 
 function mapStateToProps(state: any) {
     return {
-        showLoader: state.appData.showLoader,
-        loginStatus: state.appData.loginUser.status
+        showLoader: state?.appData?.showLoader,
+        loginStatus: state?.appData?.loginUser?.status
     };
 }
 

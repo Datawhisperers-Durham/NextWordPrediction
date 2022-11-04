@@ -1,7 +1,8 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@mui/material/styles";
-import { Avatar } from "@mui/material";
+import { createStyles, makeStyles, Theme } from "@mui/styles";
+import { Avatar, Box, Typography } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
+import { Stack } from "@mui/system";
 
 const useStyles = makeStyles((theme) =>
     createStyles({
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) =>
             marginLeft: "20px",
             marginBottom: "10px",
             padding: "10px",
-            backgroundColor: "#A8DDFD",
+            backgroundColor: "#ECF1FE",
             width: "60%",
             //height: "50px",
             textAlign: "left",
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) =>
                 position: "absolute",
                 width: "0",
                 height: "0",
-                borderTop: "15px solid #A8DDFD",
+                borderTop: "15px solid #ECF1FE",
                 borderLeft: "15px solid transparent",
                 borderRight: "15px solid transparent",
                 top: "0",
@@ -97,7 +98,7 @@ const useStyles = makeStyles((theme) =>
         },
 
         orange: {
-            color: theme.palette.getContrastText(deepOrange[500]),
+            color: deepOrange[500],
             backgroundColor: deepOrange[500],
             width: theme.spacing(4),
             height: theme.spacing(4)
@@ -117,27 +118,28 @@ const useStyles = makeStyles((theme) =>
 export const ChatBubbleLeft = (props) => {
     const message = props.message ? props.message : "no message";
     const timestamp = props.timestamp ? props.timestamp : "";
-    const photoURL = props.photoURL ? props.photoURL : "dummy.js";
-    const displayName = props.displayName ? props.displayName : "名無しさん";
+    const photoURL = props.photoURL ? props.photoURL : '/assets/man.png';
+    const displayName = props.displayName ? props.displayName : "User";
     const classes = useStyles();
     return (
         <>
-            <div className={classes.messageRow}>
+            <Stack direction={'row'} sx={{ justifyContent: 'flex-start', alignItems: 'flex-start' }} className={classes.messageRow}>
                 <Avatar
                     alt={displayName}
                     className={classes.orange}
                     src={photoURL}
+                    sx={{ height: '2em', width: '2em', p: 0, m: 0, mt: '10px', }}
                 ></Avatar>
-                <div>
-                    <div className={classes.displayName}>{displayName}</div>
-                    <div className={classes.messageBlue}>
-                        <div>
-                            <p className={classes.messageContent}>{message}</p>
-                        </div>
-                        <div className={classes.messageTimeStampRight}>{timestamp}</div>
-                    </div>
-                </div>
-            </div>
+                <Stack direction={'column'} className={classes.messageBlue}>
+                    <Typography variant="subtitle2">{displayName}</Typography>
+                    <Typography variant="body1">
+                        {message}
+                    </Typography>
+                    <Typography variant="subtitle1">{timestamp}</Typography>
+
+
+                </Stack>
+            </Stack>
         </>
     );
 };
