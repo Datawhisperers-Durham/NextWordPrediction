@@ -1,6 +1,6 @@
 import React from 'react'
-import { TextField, Button } from "@mui/material";
-import { createStyles, makeStyles, Theme } from '@mui/material/styles';
+import { TextField, Button, Fab, Box } from "@mui/material";
+import { createStyles, makeStyles, Theme } from '@mui/styles';
 import SendIcon from '@mui/icons-material/Send';
 
 
@@ -26,17 +26,16 @@ export const ChatMessageComponent = () => {
     const classes = useStyles();
     return (
         <>
-            <form className={classes.wrapForm} noValidate autoComplete="off">
+            <Box sx={{ display: 'flex', }}>
                 <TextField
                     id="standard-text"
-                    label="メッセージを入力"
+                    label="Type your message here..."
                     className={classes.wrapText}
-                //margin="normal"
                 />
-                <Button variant="contained" color="primary" className={classes.button}>
+                <Fab color="primary" aria-label="send" sx={{ justifyContent: 'center', alignContent: 'center', ml: '10px' }}>
                     <SendIcon />
-                </Button>
-            </form>
+                </Fab>
+            </Box>
         </>
     )
 }
