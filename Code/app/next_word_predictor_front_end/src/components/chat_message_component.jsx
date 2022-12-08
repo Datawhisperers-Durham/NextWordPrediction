@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { TextField, Button, Fab, Box } from "@mui/material";
 import { createStyles, makeStyles, Theme } from '@mui/styles';
 import SendIcon from '@mui/icons-material/Send';
@@ -22,8 +22,18 @@ const useStyles = makeStyles((theme) =>
 );
 
 
-export const ChatMessageComponent = () => {
+export const ChatMessageComponent = (props) => {
     const classes = useStyles();
+
+    const onSendMessageClick = () => {
+        props.onTyping("")
+    }
+
+    const onTyping = (message) => {
+        props.onTyping(message)
+        props.predictFor(message)
+    }
+
     return (
         <>
             <Box sx={{ display: 'flex', }}>
@@ -31,10 +41,12 @@ export const ChatMessageComponent = () => {
                     id="standard-text"
                     label="Type your message here..."
                     className={classes.wrapText}
+                    onChange={(e) => onTyping(e.target.value)}
+                    value={props.message}
                 />
-                <Fab color="primary" aria-label="send" sx={{ justifyContent: 'center', alignContent: 'center', ml: '10px' }}>
+                {/* <Fab color="primary" aria-label="send" sx={{ justifyContent: 'center', alignContent: 'center', ml: '10px' }} onClick={(e) => onSendMessageClick()}>
                     <SendIcon />
-                </Fab>
+                </Fab> */}
             </Box>
         </>
     )

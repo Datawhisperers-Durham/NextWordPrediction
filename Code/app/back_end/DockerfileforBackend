@@ -1,0 +1,28 @@
+FROM python:3.7
+ENV FLASK_APP=PredictorAPI/app.py
+
+LABEL version="1.0.0"
+LABEL description="This is Next word predictor project for DataWisperers"
+LABEL maintainer = ["parthdave.work@gmail.com"]
+
+# Set working directory
+
+WORKDIR /usr/src/nextwordpredictor-backend
+
+RUN pip3 install tensorflow
+RUN pip3 install pipenv
+RUN pip3 install flask
+RUN pip3 install flask-cors
+RUN pip3 install flask-mysql
+RUN pip3 install mysql-connector-python
+RUN pip3 install cryptography
+
+COPY . .
+# RUN cd back_end
+RUN cd PredictorAPI
+
+# RUN flask --app api_v1 run -p 5060
+CMD ["python3","-m","flask","run","--host=0.0.0.0","-p 5060"]
+EXPOSE 5060
+EXPOSE 3306
+# RUN pipenv run python PredictorAPI/app_v1.py
