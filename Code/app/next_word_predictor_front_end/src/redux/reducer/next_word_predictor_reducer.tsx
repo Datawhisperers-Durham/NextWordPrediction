@@ -9,12 +9,16 @@ export default function NextWordPredcitorReducer(state = initialState.predict, a
             newState = { ...state, ...action.payload }
             break;
         }
+        case ReducerConstants.PREDICTIONS_ERROR: {
+            newState = { ...state, ...action.payload }
+            break;
+        }
         case ReducerConstants.USER_SELECTED_PREDICTION: {
             newState = { ...state, predictions: undefined }
             break;
         }
         case ReducerConstants.USER_TYPING_MESSAGE: {
-            newState = { ...state, predictions: undefined }
+            newState = { ...state, ...action.payload }
             break;
         }
         default: {

@@ -119,3 +119,8 @@ graph TD
     G --> K
     K[GUI] --> L(Predict Next Word)
 ```
+
+
+Note:
+- To run on localhost we have to enable CORS and unban ports from browser
+- refer: https://appuals.com/fix-err_unsafe_port/
